@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CrisesConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img src="logo.png" class="logo">
+    <div>
+      <h1>CrisesConnect</h1>
+      <p>Modern emergency coordination for real-world impact</p>
+    </div>
+  </div>
+</header>
+
+<main class="dashboard">
+
+  <!-- VOLUNTEER REGISTRATION -->
+  <section class="card highlight">
+    <h2>Volunteer Registration</h2>
+
+    <form id="volunteerForm" class="grid">
+      <input id="name" placeholder="Full name" required>
+      <input id="mobile" placeholder="Mobile number" required>
+      <input id="aadhar" placeholder="Aadhaar number" required>
+
+      <select id="skill" required>
+        <option value="">Skill</option>
+        <option>First Aid</option>
+        <option>Driver</option>
+        <option>Electrician</option>
+        <option>Food Distribution</option>
+      </select>
+
+      <input id="location" placeholder="Location" required>
+
+      <select id="availability">
+        <option value="Available">Available</option>
+        <option value="Busy">Busy</option>
+      </select>
+
+      <button type="submit" class="primary">Register Volunteer</button>
+    </form>
+
+    <p id="successMsg" class="success">Volunteer registered successfully</p>
+  </section>
+
+  <div class="two-col">
+
+    <!-- ADMIN -->
+    <section class="card">
+      <h2>Admin Control</h2>
+
+      <div class="admin-row">
+        <button id="emergencyBtn" class="secondary">Toggle Emergency</button>
+        <span id="emergencyStatus" class="pill off">OFF</span>
+      </div>
+
+      <p class="meta">Active Tasks: <strong id="taskCount">0</strong></p>
+    </section>
+
+    <!-- TASKS -->
+    <section class="card">
+      <h2>Create Emergency Task</h2>
+
+      <div class="task-row">
+        <input id="taskInput" placeholder="Task description">
+        <select id="priority">
+          <option value="Normal">Normal</option>
+          <option value="High">High Priority</option>
+        </select>
+        <button id="addTaskBtn" class="primary small">Add</button>
+      </div>
+
+      <ul id="taskList" class="list"></ul>
+    </section>
+
+  </div>
+
+  <!-- EMERGENCY-ONLY CONTENT -->
+  <div id="emergencyContainer">
+
+    <section class="card emergency-info">
+      <h2>Emergency Operations</h2>
+      <p>
+        Emergency Mode is <strong id="emergencyText">inactive</strong>.
+        When active, this system coordinates volunteers and tasks.
+      </p>
+    </section>
+
+    <section class="card emergency-instructions">
+      <h2>Emergency Instructions</h2>
+      <ul>
+        <li>Respond only to assigned tasks</li>
+        <li>Follow official safety guidelines</li>
+        <li>Confirm availability before action</li>
+      </ul>
+    </section>
+
+    <section class="card emergency-dos">
+      <h2>Do & Don’t During Emergency</h2>
+
+      <div class="do-dont-grid">
+        <div>
+          <h3>Do</h3>
+          <ul>
+            <li>Stay calm</li>
+            <li>Coordinate via platform</li>
+            <li>Prioritize safety</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Don’t</h3>
+          <ul>
+            <li>Self-deploy</li>
+            <li>Spread rumors</li>
+            <li>Interfere with authorities</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- VOLUNTEERS -->
+  <section class="card">
+    <h2>Registered Volunteers</h2>
+
+    <select id="skillFilter">
+      <option value="">Filter by skill</option>
+      <option>First Aid</option>
+      <option>Driver</option>
+      <option>Electrician</option>
+      <option>Food Distribution</option>
+    </select>
+
+    <ul id="volunteerList" class="list"></ul>
+  </section>
+
+</main>
+
+<footer>
+  Team Runtime Terror • Achintya Varma & Aditya Jain
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
